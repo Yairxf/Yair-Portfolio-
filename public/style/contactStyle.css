@@ -1,0 +1,352 @@
+:root {
+    --bgColor: #111111;
+    --primaryColor: #226CE0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    margin: 0;
+    background: var(--bgColor) !important;
+    height: 100%;
+    overflow: visible;
+    z-index: 1;
+    position: relative;
+    overflow-x: hidden;
+    font-family: "Open Sans Hebrew Condensed", Sans-serif !important;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#arrow-up-right-side {
+    right: 0;
+    bottom: 0;
+    margin: 15px;
+    margin-right: 30px;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.arrow-box i {
+    font-size: 20px;
+}
+
+.arrow-box {
+    border-radius: 6px;
+    background-color: #303030;
+    color: #ffffff;
+    width: 40px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+}
+
+
+/*nav style*/
+
+.nav-link {
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+    padding: 0 !important;
+    font-weight: bold;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    transition: width .3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.nav-link.active {
+    color: var(--primaryColor) !important;
+}
+
+.nav-link:hover {
+    transition: ease 0.3s;
+    color: rgba(255, 255, 255, 0.932);
+}
+
+@media only screen and (max-width: 767px) {
+    /* Mobile phones */
+    .navbar-nav {
+        text-align: left;
+    }
+}
+
+.navbar-nav {
+    border-radius: 12px;
+    margin-top: 2rem;
+    padding: 16px 31px;
+    background-color: #1D1D1D;
+}
+
+.sidenav {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.sidenav .row {
+    height: 100%;
+}
+
+.sidenav ul {
+    color: #79797952;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-bottom: auto;
+}
+
+.sidenav ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidenav ul li a {
+    color: #79797952;
+}
+
+.sidenav ul li:hover {
+    cursor: pointer;
+}
+
+.sidenav ul li i {
+    font-size: 10.5px;
+}
+
+.logo-sidebar span {
+    color: white;
+}
+
+.logo-sidebar:hover {
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.sidenav ul li i.active {
+    color: rgb(180, 180, 180);
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.dot-arrow {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    right: 0;
+    /* bottom: 100%; */
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    border-radius: 50%;
+}
+
+.dot-arrow:after,
+.dot-arrow:before {
+    content: " ";
+    background-color: inherit;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.dot-arrow:before {
+    left: 100%;
+    top: 100%;
+    color: gray;
+}
+
+.dot-arrow:after {
+    right: 100%;
+    top: 100%;
+    color: gray;
+}
+
+.dot-arrow.active:after {
+    top: -100%;
+    animation: right-wobble 0.35s;
+    color: gray;
+}
+
+.dot-arrow.active:before {
+    top: -100%;
+    animation: left-wobble 0.35s;
+    color: gray;
+}
+
+.dot-arrow.reverse:before {
+    top: 100%;
+    animation: left-wobble-2 0.35s;
+    color: gray !important;
+}
+
+.dot-arrow.reverse:after {
+    top: 100%;
+    animation: right-wobble-2 0.35s;
+    color: gray;
+}
+
+@keyframes left-wobble {
+    0% {
+        left: 100%;
+    }
+    50% {
+        left: 140%;
+    }
+    100% {
+        left: 100%;
+        color: gray;
+    }
+}
+
+@keyframes right-wobble {
+    0% {
+        right: 100%;
+    }
+    50% {
+        right: 140%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes left-wobble-2 {
+    0% {
+        left: 100%;
+    }
+    50% {
+        left: 140%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes right-wobble-2 {
+    0% {
+        right: 100%;
+    }
+    50% {
+        right: 140%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+.bottom-part-side-bar {
+    color: rgba(255, 255, 255, 0.877);
+    margin-top: auto;
+    margin-bottom: 2rem;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+#social-link-sidebar i {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: white !important;
+}
+
+
+/*from style main content*/
+
+#form-content {
+    margin-top: 18rem;
+}
+
+.form-title span {
+    font-size: 2.2rem;
+}
+
+.social-list-form ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-list-form ul li i {
+    color: white;
+    font-size: 17px;
+}
+
+.form-control,
+textarea {
+    background-color: transparent;
+    text-align: right;
+    outline: none;
+    color: rgba(255, 255, 255, 0.815);
+    padding: 8px;
+    border-radius: 7px;
+    border: 1px white solid;
+}
+
+.form-control:focus,
+textarea:focus {
+    background-color: transparent;
+    outline: none;
+    color: rgba(255, 255, 255, 0.815);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.637);
+    text-align: right;
+}
+
+.from-group {
+    text-align: right !important;
+}
+
+.from-group label {
+    color: white;
+}
