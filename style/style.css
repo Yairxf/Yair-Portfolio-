@@ -462,15 +462,6 @@ html {
     font-weight: bold;
 }
 
-#feedbacks {
-    border: 1px solid white;
-    border-radius: 9px;
-    padding: 25px 40px;
-    /* height: 50vh; */
-    margin-top: 10rem;
-    /* margin-bottom: 21rem; */
-}
-
 
 /*my works style*/
 
@@ -1074,10 +1065,13 @@ html {
 /*feedbacks style*/
 
 #feedbacks {
+    margin-top: 5rem;
+    padding: 26px;
+}
+
+#feedbacks .row {
     border: 1px solid white;
     border-radius: 9px;
-    padding: 25px 40px;
-    margin-bottom: 10rem;
 }
 
 .feedback-side ul {
@@ -1098,6 +1092,10 @@ html {
 
 .feedback-text {
     color: white;
+}
+
+.feedback-side {
+    padding: 25px 40px;
 }
 
 .feedback-side ul li i {
@@ -1156,7 +1154,6 @@ html {
 
 .circle {
     border-radius: 50%;
-    border: 1px white solid;
     width: 12rem;
     height: 12rem;
     text-align: center;
