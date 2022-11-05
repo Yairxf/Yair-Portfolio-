@@ -31,10 +31,22 @@ html {
 #arrow-up-right-side {
     right: 0;
     bottom: 0;
-    margin: 25px;
-    margin-right: 40px;
+    margin: 16px;
+    /* margin-right: 40px; */
     cursor: pointer;
     z-index: 99999;
+}
+
+@media only screen and (min-width: 992px) {
+    /* Desktops */
+    #arrow-up-right-side {
+        right: 0;
+        bottom: 0;
+        margin: 25px;
+        margin-right: 40px;
+        cursor: pointer;
+        z-index: 99999;
+    }
 }
 
 .arrow-box i {
@@ -320,11 +332,6 @@ html {
     box-shadow: inset 0 0 0 0 rgba(250, 250, 250, 0.089)
 }
 
-#main-content {
-    margin-top: 18rem;
-    margin-bottom: 22rem;
-}
-
 #main-content .row {
     gap: 10rem;
 }
@@ -355,6 +362,10 @@ html {
         top: 23%;
         left: 34%;
     }
+    #main-content {
+        margin-top: 18rem;
+        margin-bottom: 22rem;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -364,6 +375,10 @@ html {
         z-index: -1;
         /* top: 23%; */
         /* left: 34%; */
+    }
+    #main-content {
+        margin-top: 14rem;
+        margin-bottom: 22rem;
     }
 }
 
