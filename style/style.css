@@ -167,6 +167,10 @@ html {
     font-size: 10.5px;
 }
 
+.sidenav ul li i.active {
+    color: rgb(180, 180, 180);
+}
+
 .logo-sidebar span {
     color: white;
 }
@@ -371,11 +375,6 @@ html {
         margin-top: 18rem;
         margin-bottom: 22rem;
     }
-}
-
-#main-content {
-    margin-top: 14rem;
-    margin-bottom: 22rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -715,11 +714,11 @@ html {
     flex-direction: column;
 }
 
-#list-why-me button:hover {
+#list-why-me a:hover {
     box-shadow: inset 300px 0 0 0 rgba(250, 250, 250, 0.089)
 }
 
-#list-why-me button {
+#list-why-me a {
     background-color: var(--primaryColor);
     color: white;
     border-radius: 20px;
@@ -1122,12 +1121,12 @@ html {
 
 .circle-container> :nth-child(2) {
     background-color: #3652F1;
-    width: 26px;
+    width: 24px;
     position: absolute;
-    height: 96px;
-    left: 378.4px;
+    height: 86px;
+    left: 386.4px;
     border-top-right-radius: 31%;
-    top: 48px;
+    top: 53px;
     border-radius: 90%;
     z-index: -1;
 }
@@ -1138,13 +1137,13 @@ html {
 
 .circle-container> :nth-child(4) {
     background-color: #586ff1;
-    width: 27px;
+    width: 23px;
     position: absolute;
     z-index: -1;
-    height: 97px;
-    left: 214.4px;
+    height: 88px;
+    left: 218.4px;
     border-top-right-radius: 31%;
-    top: 48px;
+    top: 52px;
     border-radius: 55%;
 }
 
