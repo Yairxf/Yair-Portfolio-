@@ -18,6 +18,8 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4GJPSB709"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="/src/js/contact.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -131,25 +133,26 @@
 
                     </ul>
                 </div>
-                <form>
+                <form onsubmit="return false">
                     <div class="mb-3 from-group">
                         <label for="name" class="form-label">שם פרטי</label>
                         <input type="text" class="form-control" id="name" placeholder="...שם פרטי שלך" required>
                     </div>
                     <div class="mb-3 from-group">
-                        <label for="tel" class="form-label">מספר טלפון</label>
-                        <input type="tel" class="form-control" id="tel" placeholder="...מספר טלפון שלך" required>
-                    </div>
-                    <div class="mb-3 from-group">
-                        <label for="email" class="form-label">שם פרטי</label>
+                        <label for="email" class="form-label">כתובת איימל</label>
                         <input type="email" class="form-control" id="email" placeholder="...כתובת איימיל שלך" required>
                     </div>
                     <div class="mb-3 from-group">
+                        <label for="tel" class="form-label">מספר טלפון</label>
+                        <input type="tel" class="form-control" id="tel" placeholder="...מספר טלפון שלך" required>
+                    </div>
+
+                    <div class="mb-3 from-group">
                         <label for="email" class="form-label">הודעה</label>
-                        <textarea name="" id="" cols="49" rows="5"></textarea>
+                        <textarea name="" id="subject" rows="5"></textarea>
                     </div>
                     <div class="mb-3">
-                        <input type="submit" class="btn btn-primary w-100" name="" id="">
+                        <input type="submit" class="btn btn-primary w-100" name="" id="" onclick="sendMessage()">
                     </div>
                 </form>
             </div>

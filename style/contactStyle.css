@@ -355,3 +355,7 @@ textarea:focus {
 .from-group label {
     color: white;
 }
+
+textarea {
+    width: 100%;
+}
