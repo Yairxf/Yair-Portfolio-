@@ -121,7 +121,7 @@
     <section class="container" id="works">
         <div class="title-works text-center mb-3">עבודות אחרונת שלי</div>
         <div class="row justify-content-center gap-5 row-cols-3" id="card-container">
-            <div class="col-lg-3 col-11" id="work-card">
+            <div class="col-lg-3 col-11 work-card" id="work-card">
                 <div class="projects-thumbnail">
                     <a>
                         <img src="./assets/project-img/HostLocal.png" id="localhost-img" loading="eager" alt="portfilo-img">
@@ -134,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-11" id="work-card">
+            <div class="col-lg-3 col-11 work-card" id="work-card">
                 <div class="projects-thumbnail">
                     <a>
                         <img src="./assets/project-img/NiceWeb.png" id="nickwen-img" loading="lazy" alt="portfilo-img">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-11" id="work-card">
+            <div class="col-lg-3 col-11 work-card" id="work-card">
                 <div class="projects-thumbnail">
                     <a>
                         <img src="./assets/project-img/PlayIL.png" id="playil-img" loading="lazy" alt="portfilo-img">
@@ -165,7 +165,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-11" id="work-card">
+            <div class="col-lg-3 col-11 work-card" id="work-card">
                 <div class="projects-thumbnail">
                     <a>
                         <img src="./assets/project-img/RangeNames.png" id="rangenames-img" loading="lazy" alt="portfilo-img">
@@ -180,7 +180,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-11" id="work-card">
+            <div class="col-lg-3 col-11 work-card" id="work-card">
                 <div class="projects-thumbnail">
                     <a>
                         <img src="./assets/project-img/resume.jpg" id="resume-img" loading="lazy" alt="portfilo-img">
@@ -195,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-11" id="work-card">
+            <div class="col-lg-3 col-11 work-card" id="work-card">
                 <div class="projects-thumbnail">
                     <a>
                         <img src="./assets/project-img/WeHost.png" id="wehost-img" loading="lazy" alt="portfilo-img">
@@ -761,7 +761,18 @@
         // start observing
         intersectionObserverOtherServices.observe(document.querySelector('#other-services'));
     </script>
+    <script defer>
+        document.getElementById("card-container").onmousemove = e => {
+            for (const card of document.getElementsByClassName("work-card")) {
+                const rect = card.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
 
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            };
+        }
+    </script>
 </body>
 
 </html>
