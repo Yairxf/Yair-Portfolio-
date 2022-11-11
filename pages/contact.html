@@ -133,36 +133,76 @@
 
                     </ul>
                 </div>
-                <form>
+                <form class="needs-validation" novalidate>
                     <div class="mb-3 from-group">
                         <label for="name" class="form-label">שם פרטי</label>
                         <input type="text" class="form-control" id="name" placeholder="...שם פרטי שלך" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            אנא הכנס שם
+                        </div>
                     </div>
                     <div class="mb-3 from-group">
                         <label for="email" class="form-label">כתובת איימל</label>
                         <input type="email" class="form-control" id="email" placeholder="...כתובת איימיל שלך" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            אנא הכנס כתובת איימל
+                        </div>
                     </div>
                     <div class="mb-3 from-group">
                         <label for="tel" class="form-label">מספר טלפון</label>
                         <input type="tel" class="form-control" id="tel" placeholder="...מספר טלפון שלך" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            אנא הכנס מספר טלפון
+                        </div>
                     </div>
 
                     <div class="mb-3 from-group">
                         <label for="email" class="form-label">הודעה</label>
-                        <textarea name="" id="subject" rows="5"></textarea>
+                        <input type="text" class="form-control" id="text" placeholder="...הודעה שלך" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            אנא הכנס הודעה
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <input type="submit" class="btn btn-primary w-100" name="" id="" onclick="sendMessage()">
+                        <input type="submit" class="btn btn-primary w-100" name="" id="" onclick="sendMessage()" required>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <div class="toast">
+
+        <div class="toast-content">
+            <i class="fas fa-solid fa-check check"></i>
+
+            <div class="message">
+                <span class="text text-1">Success</span>
+                <span class="text text-2">Your changes has been saved</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+
+        <div class="progress"></div>
+    </div>
 
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@11.4.29/dist/sweetalert2.all.js"></script>
+
     <script defer>
         $('.arrow-part-side-bar').click(function() {
             if ($('.dot-arrow').hasClass('active')) {
@@ -189,6 +229,85 @@
     <script>
         AOS.init();
     </script>
+    <script defer>
+        (function() {
+            'use strict';
+
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                const button = document.querySelector("button")
+                let timer1, timer2;
+
+
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+
+                    form.addEventListener('submit', function(event) {
+                        var failed = false;
+                        event.preventDefault();
+                        var toast = document.querySelector(".toast");
+                        var closeIcon = document.querySelector(".close");
+                        var progress = document.querySelector(".progress");
+                        let timer1, timer2;
+                        if (form.checkValidity() === false) {
+                            failed = true;
+                        } else {
+                            event.preventDefault();
+
+                            Swal.fire(
+                                'Good job!',
+                                'success'
+                            )
+                            toast.classList.add("active");
+                            toast.classList.add("show");
+                            progress.classList.add("active");
+
+                            timer1 = setTimeout(() => {
+                                toast.classList.remove("show");
+                            }, 5000); //1s = 1000 milliseconds
+
+                            timer2 = setTimeout(() => {
+                                progress.classList.remove("show");
+                            }, 5000);
+
+                            closeIcon.addEventListener("click", () => {
+                                toast.classList.remove("show");
+
+                                setTimeout(() => {
+                                    progress.classList.remove("show");
+                                }, 300);
+
+                                clearTimeout(timer1);
+                                clearTimeout(timer2);
+                            });
+                            event.preventDefault();
+                        }
+
+                        if (failed == true) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            Swal.fire({
+                                icon: 'error',
+                                title: '... טעות',
+                                text: 'המערכת זיהתה תקלה נסה שוב!',
+                                footer: '<a href="/pages/contact.html" style="text-decoration: none;font-size:17px;">לחץ כאן כי לנסות שוב</a>'
+                            })
+                            event.preventDefault();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
+    <script type="module" defer>
+        document.querySelector("form").querySelectorAll('.form-control').forEach(input => { input.addEventListener(('input'), () => { if (input.checkValidity()) { input.classList.remove('is-invalid'); input.classList.add('is-valid'); } else { input.classList.remove('is-valid')
+        input.classList.add('is-invalid'); } }); });
+    </script>
+
 </body>
 
 </html>
