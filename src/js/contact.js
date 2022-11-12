@@ -12,4 +12,5 @@ function sendMessage() {
     }
 
     request.send(JSON.stringify(params));
+
 }

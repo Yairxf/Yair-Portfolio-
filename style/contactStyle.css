@@ -303,8 +303,15 @@ html {
 
 /*from style main content*/
 
+@media only screen and (min-width: 992px) {
+    /* Desktops */
+    #form-content {
+        margin-top: 18rem;
+    }
+}
+
 #form-content {
-    margin-top: 18rem;
+    margin-top: 13rem;
 }
 
 .form-title span {
