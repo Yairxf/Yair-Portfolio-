@@ -635,10 +635,8 @@ html {
 }
 
 .projects-thumbnail a img#localhost-img {
-    height: auto;
-    /* max-width: 100%; */
+    max-width: 100%;
     border: none;
-    height: 57rem;
     border-radius: 0;
     width: 100%;
     object-fit: cover;
