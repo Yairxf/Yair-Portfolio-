@@ -342,7 +342,7 @@ html {
 }
 
 #main-content .row {
-    gap: 10rem;
+    gap: 13rem;
 }
 
 #text-main-content {
@@ -351,7 +351,7 @@ html {
 }
 
 #text-main-content span {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 #text-main-content p {
