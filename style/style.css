@@ -464,15 +464,10 @@ html {
 
 /*my works style*/
 
-#works {
-    margin-bottom: 12rem;
-}
-
 @media only screen and (min-width: 992px) {
     /* Desktops */
     #works {
         margin-bottom: 12rem;
-        height: 95vh;
     }
 }
 
@@ -645,6 +640,32 @@ html {
     border-radius: 5px;
 }
 
+.projects-thumbnail a img#dragon-img {
+    height: auto;
+    /* max-width: 100%; */
+    border: none;
+    height: 417%;
+    border-radius: 0;
+    width: 107%;
+    object-fit: cover;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.projects-thumbnail a img#yourhost-img {
+    height: auto;
+    /* max-width: 100%; */
+    border: none;
+    height: 451%;
+    border-radius: 0;
+    width: 100%;
+    object-fit: cover;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
 
 /*why me style*/
 
@@ -653,6 +674,7 @@ html {
     font-weight: bold;
     letter-spacing: -1px;
     font-size: 1.2rem;
+    margin-top: 10rem;
 }
 
 #why-me {}
