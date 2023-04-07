@@ -335,6 +335,7 @@ html {
 }
 
 #text-main-content a {
+    font-size: 20px;
     background-color: #1459c7;
     color: white;
     padding: 7px 45px;
@@ -351,7 +352,7 @@ html {
 }
 
 #text-main-content span {
-    font-size: 3.5rem;
+    font-size: 3.9rem;
 }
 
 #text-main-content p {
